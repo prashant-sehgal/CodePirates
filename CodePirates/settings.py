@@ -80,7 +80,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'Code Pirates',
         'USER': 'postgres',
-        'PASSWORD': 'googleplex95790',
+        'PASSWORD': '5432',
         'HOST': 'localhost'
     }
 

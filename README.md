@@ -8,4 +8,4 @@
 ## Here it's our project website looks like
 
 # home Page /
-![alt text](/Git-Con/img1.PNG)
+![alt text](/Git-CON/img1.PNG)

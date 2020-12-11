@@ -7,5 +7,17 @@
 
 ## Here it's our project website looks like
 
-# home Page /
+## home Page /
 ![alt text](/Git-CON/img1.PNG)
+
+## About Section /
+![alt text](/Git-CON/img2.PNG)
+
+## There is a videos section where all our embended videos and playlist from YouTube /
+![alt text](/Git-CON/img3.PNG)
+
+## After Clicking on One topic
+![alt text](/Git-CON/img5.PNG)
+
+ ## Contact Section Section /
+![alt text](/Git-CON/img4.PNG)

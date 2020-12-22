@@ -53,7 +53,7 @@
     <header id="header" class="fixed-top">
       <div class="container d-flex align-items-center">
   
-        <h1 class="logo mr-auto"><a href="/">CODE PIRATES</a></h1>
+        <h1 class="logo mr-auto"><a href="/" id="title"></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
   
@@ -98,6 +98,10 @@
     </header><!-- End Header -->
 {% block body %}
 {% endblock %}
+
+    <script>
+      document.getElementById('title').textContent = '<CODEPIRATES />';
+    </script>
 
   <!-- Vendor JS Files -->
   <script src="{% static 'home/assets/vendor/jquery/jquery.min.js' %}"></script>

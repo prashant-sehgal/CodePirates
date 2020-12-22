@@ -2,8 +2,14 @@ from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from .models import Message, Playlist, Comment, Feedback
 from django.http import HttpResponse
+import re
 
 # Create your views here.
+
+def findUrl(string):
+    regex = r"(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'\".,<>?«»“”‘’]))"
+    url = re.findall(regex,string)       
+    return [x[0] for x in url] 
 
 def home(request):
     page = "home"
@@ -65,6 +71,7 @@ def reply(request, id):
 def playlist(request, name):
     if request.user.is_authenticated:
         playlist = Playlist.objects.get(name=name)
+        playlist.source = findUrl(playlist.source)[0]
         username = request.user.username
         comments = list(Comment.objects.filter(playlist= name))
         comments.reverse()  
@@ -73,12 +80,12 @@ def playlist(request, name):
         else:
             newFeedbackObject = Feedback(playlist= name)
             newFeedbackObject.save()
-        
         feedback = Feedback.objects.get(playlist=name)
         likedClass = "btn-success" if username in feedback.likedUsers else "btn-outline-success"
         dislikedClass = "btn-danger" if username in feedback.dislikedUsers else "btn-outline-danger"
 
         page = 'videos'
+        print(playlist.source)
         return render(request, 'home/playlist.html', {'playlist':playlist, 'page':page, 'comments':comments, 'likedClass':likedClass, 'dislikedClass':dislikedClass, 'feedback':feedback})
 
 def comment(request, playlist):

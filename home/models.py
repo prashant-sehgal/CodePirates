@@ -24,7 +24,7 @@ class Playlist(models.Model):
     ]
     filter = models.CharField(max_length=23, choices=FILTER_CHOICES)
     date = models.DateField(auto_now=True)
-    source = models.URLField()
+    source = models.CharField(max_length=200)
     image = models.ImageField(upload_to='Playlist-Images')
     description = models.TextField()
 

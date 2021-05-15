@@ -62,7 +62,7 @@ def reply(request, id):
         try:
             send_mail(subject, content, 'goldysehgal.95790@outlook.com', [message.email], fail_silently=False)
         except Exception as error:
-            return HttpResponse('Reply is not send due to {} \n <h3><a href="/messages/">Return to Messages</h3>'.format(error))
+            return HttpResponse('Reply is not send due to {} \n <h3><a href="/messages/rest">Return to Messages</h3>'.format(error))
         message.date = date
         message.save()
         return redirect('/messages/rest')

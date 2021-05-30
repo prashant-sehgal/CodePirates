@@ -141,7 +141,7 @@ MEDIA_ROOT = Path(BASE_DIR / 'media')
 #Email setup.......
 EMAIL_HOST = 'smtp.outlook.com'
 EMAIL_PORT = 587 
-EMAIL_HOST_USER = 'goldysehgal.95790@outlook.com'
-EMAIL_HOST_PASSWORD = '@95790microsoft-server'
+EMAIL_HOST_USER = '...'
+EMAIL_HOST_PASSWORD = '...'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
